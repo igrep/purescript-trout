@@ -40,10 +40,11 @@ data CaptureAll (v :: Symbol) t
 -- | the methods handled by this resource.
 data Resource ms
 
--- | The `m` symbol is the HTTP method that is handled, `r` is the
--- | response representation (usually some type specific to the application
+-- | The `m` symbol is the HTTP method that is handled, `req` is usually
+-- | `ReqBody` or `Data.Void.Void` to represent the request body type, `r` is
+-- | the response representation (usually some type specific to the application
 -- | domain,) and `cts` are the content types supported.
-data Method (m :: Symbol) r cts
+data Method (m :: Symbol) req r cts
 
 -- | A type-level description of a raw middleware, terminating a chain of path
 -- | literals, captures, and other endpoint type constructs. The `m` symbol is

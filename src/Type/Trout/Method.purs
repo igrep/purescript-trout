@@ -10,11 +10,13 @@ module Type.Trout.Method
        , Connect
        ) where
 
+import Data.Void (Void)
+
 import Type.Trout (Method)
 
 type Options = Method "OPTIONS"
 
-type Get = Method "GET"
+type Get = Method "GET" Void
 
 type Head = Method "HEAD"
 
@@ -24,8 +26,8 @@ type Put = Method "PUT"
 
 type Patch = Method "PATCH"
 
-type Delete = Method "DELETE"
+type Delete = Method "DELETE" Void
 
-type Trace = Method "TRACE"
+type Trace = Method "TRACE" Void
 
-type Connect = Method "CONNECT"
+type Connect = Method "CONNECT" Void
